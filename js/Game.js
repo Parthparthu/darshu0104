@@ -46,7 +46,7 @@ class Game {
     Player.getPlayerInfo();
     
     if(allPlayers !== undefined){
-      background(rgb(198,135,103));
+      background(bg1);
       image(track, 0,-displayHeight*4,displayWidth, displayHeight*5);
       
       //var display_position = 100;
@@ -70,6 +70,9 @@ class Game {
         cars[index-1].y = y;
 
         if (index === player.index){
+          stroke(10);
+          fill("red");
+          ellipse(x, y, 60, 60);
           cars[index - 1].shapeColor = "red";
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y;
@@ -86,7 +89,7 @@ class Game {
       player.update();
     }
 
-    if(player.distance > 3860){
+    if(player.distance > 4440){
       gameState = 2;
     }
    
